@@ -1,12 +1,16 @@
-const path = require('path')
+const path = require('path');
 
-module.exports = {
-    entry: './app/src/components/index.jsx',
+const config = {
+    entry: './lib/components/Index.js',
     output: {
-        path: path.resolve(__dirname, 'app/dist'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js'
     },
     module: {
-        rules: [{ test: /\.jsx$/, exclude: /node_modules/, use: 'babel-loader' }],
-    },
-}
+        rules: [
+            {test: /\.js$/, use: 'babel-loader'}
+        ]
+    }
+};
+
+module.exports = config
